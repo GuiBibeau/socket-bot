@@ -10,8 +10,31 @@
   "license": "ISC",
   "dependencies": {
     "apiai": "^4.0.2",
-    "express": "^4.15.3",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.2",
+    "nodemailer": "^4.0.1",
+    "prop-types": "^15.5.10",
+    "react": "^15.5.4",
+    "react-chat-ui": "0.0.28",
+    "react-dom": "^15.5.4",
+    "react-marked": "^0.3.1",
     "socket.io": "^2.0.1",
+    "socket.io-client": "^2.0.1",
     "superagent": "^3.5.2"
-  }
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.0.2",
+    "react-scripts": "0.9.5"
+  },
+  "scripts": {
+  "start": "react-scripts start & node server.js",
+  "dev": "npm-run-all --parallel --print-label dev:react dev:server",
+  "dev:react": "react-scripts start",
+  "dev:server": "PORT=3001 nodemon server.js",
+  "build": "react-scripts build",
+  "test": "react-scripts test --env=jsdom",
+  "eject": "react-scripts eject",
+  "precommit": "./bin/precommit.sh",
+  "postinstall": "./bin/postinstall.sh"
+}
 }
